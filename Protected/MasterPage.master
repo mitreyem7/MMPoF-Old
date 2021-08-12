@@ -1,0 +1,273 @@
+<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>MMPOF</title>
+    
+    <style type="text/css">
+        .style1
+        {            width: 211px;
+        }
+        .style3
+        {
+            width: 100%;
+        }
+        .style4
+        {
+            width: 233px;
+        }
+        .style5
+        {
+            width: 567px;
+        }
+        .style6
+        {
+            width: 69px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">
+        </telerik:RadScriptManager>
+        <table width="120 px">
+            <tr>
+                <td valign="top" class="style5">
+                    <asp:Menu ID="Menu1" runat="server" Font-Names="Tahoma" 
+                        ForeColor="Black" Font-Bold="True" Orientation="Horizontal">
+                        <DynamicMenuItemStyle Font-Bold="True" Font-Names="Tahoma" Font-Size="12pt" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Protected/Questions.aspx" Text="Home" Value="Home" 
+                                ImageUrl="~/Protected/Images/home.jpg" 
+                                SeparatorImageUrl="~/Protected/Images/seprator.bmp">
+                            </asp:MenuItem>
+                            <asp:MenuItem ImageUrl="~/Protected/Images/stats.jpg" 
+                                NavigateUrl="~/Protected/Statistics.aspx" Text="Statistics" Value="Statistics">
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                    <asp:Menu ID="Menu2" runat="server" Font-Names="Tahoma" 
+                        ForeColor="Black" Font-Bold="True" Orientation="Horizontal">
+                        <DynamicMenuItemStyle Font-Bold="True" Font-Names="Tahoma" Font-Size="12pt" />
+                        <Items>
+                            <asp:MenuItem ImageUrl="~/Protected/Images/caller.jpg" 
+                                NavigateUrl="~/Protected/Caller.aspx" Text="Caller" Value="Caller">
+                            </asp:MenuItem>
+                             <asp:MenuItem ImageUrl="~/Protected/Images/research.jpg" 
+                                NavigateUrl="~/Protected/Research.aspx" Text="Research" Value="Research">
+                            </asp:MenuItem>
+                           
+                        </Items>
+                    </asp:Menu>
+                </td>
+                <td valign="top" class="style1">
+                    <asp:HyperLink ID="hlQuestion1" runat="server" Font-Bold="True" 
+                        Font-Size="12" BackColor="Silver" BorderColor="Silver" 
+                        BorderStyle="Outset" Width="60px">hl1</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="hlQuestion2" runat="server" Font-Bold="True" 
+                        Font-Size="12" BackColor="Silver" BorderColor="Silver" 
+                        BorderStyle="Outset" Width="60px">hl2</asp:HyperLink>
+                </td>
+                <td  valign="top" class="style4">
+                    <asp:HyperLink ID="hlQuestion3" runat="server" Font-Bold="True" 
+                        Font-Size="12" BackColor="Silver" BorderColor="Silver" 
+                        BorderStyle="Outset" Width="60px">hl3</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="hlQuestion4" runat="server" Font-Bold="True" 
+                        Font-Size="12" BackColor="Silver" BorderColor="Silver" 
+                        BorderStyle="Outset" Width="60px">hl4</asp:HyperLink>
+                    <br />
+                </td>
+                <td  valign="top" class="style6">
+                    <asp:HyperLink ID="hlQuestion5" runat="server" Font-Bold="True" 
+                        Font-Size="12" BackColor="Silver" BorderColor="Silver" 
+                        BorderStyle="Outset" Width="60px">hl5</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="hlQuestion6" runat="server" Font-Bold="True" 
+                        Font-Size="12" BackColor="Silver" BorderColor="Silver" 
+                        BorderStyle="Outset" Width="60px">hl6</asp:HyperLink>
+                    <br />
+                </td>
+
+
+                <td valign="top" class="style3">
+                    <br />
+                </td>
+
+                <td valign="top">
+                                            <asp:Label ID="LabelUser" runat="server" Font-Size="Large"></asp:Label>
+                    <br />
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" BackColor="#E0E0E0" BorderColor="Black"
+                                                BorderStyle="Solid" BorderWidth="1px" ForeColor="Black" LogoutPageUrl="~/Login.aspx" style="padding-right: 10px; padding-left: 10px; padding-bottom: 2px; padding-top: 2px" />
+                </td>
+
+            </tr>
+            </table>
+    </div>
+    <asp:Timer ID="Timer1" runat="server" Interval="5000">
+    </asp:Timer>
+    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+        <AjaxSettings>
+            <telerik:AjaxSetting AjaxControlID="btnRecorderOne">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+            <telerik:AjaxSetting AjaxControlID="btnRecorderTwo">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+            <telerik:AjaxSetting AjaxControlID="btnCallerOne">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+            <telerik:AjaxSetting AjaxControlID="btnCallerTwo">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+            <telerik:AjaxSetting AjaxControlID="btnResearcher">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+            <telerik:AjaxSetting AjaxControlID="Timer1">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion1" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion2" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion3" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion4" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion5" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion6" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+             <telerik:AjaxSetting AjaxControlID="hlQuestion1">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion1" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion2" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion3" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion4" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion5" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion6" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+                   <telerik:AjaxSetting AjaxControlID="hlQuestion2">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion1" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion2" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion3" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion4" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion5" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion6" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+                   <telerik:AjaxSetting AjaxControlID="hlQuestion3">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion1" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion2" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion3" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion4" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion5" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion6" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+                   <telerik:AjaxSetting AjaxControlID="hlQuestion4">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion1" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion2" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion3" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion4" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion5" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion6" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+                   <telerik:AjaxSetting AjaxControlID="hlQuestion5">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion1" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion2" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion3" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion4" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion5" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion6" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+                   <telerik:AjaxSetting AjaxControlID="hlQuestion6">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion1" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion2" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion3" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion4" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion5" />
+                    <telerik:AjaxUpdatedControl ControlID="hlQuestion6" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnRecorderTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerOne" />
+                    <telerik:AjaxUpdatedControl ControlID="btnCallerTwo" />
+                    <telerik:AjaxUpdatedControl ControlID="btnResearcher" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+        </AjaxSettings>
+    </telerik:RadAjaxManager>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+    </form>
+</body>
+</html>

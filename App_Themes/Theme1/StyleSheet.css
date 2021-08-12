@@ -1,0 +1,43 @@
+﻿body 
+{
+    font-family:Arial;
+    color:#222222;
+    background-color:#f0f0e0;
+    vertical-align:top;
+}
+
+a:hover
+{
+    border-bottom: #222222 solid;
+    border-top: #222222 double;
+}
+
+button
+{
+    background-color: #f0f0e0;
+
+    
+}
+a:link
+{
+    color:#222222;
+}
+
+a:visited
+{
+    color:#222222;
+}
+
+
+td
+{
+    border-bottom: 0px solid #222222;
+    border-left: 0px solid #222222;
+    border-right: 0px solid #222222;
+    border-top: 0px solid #222222;
+}
+a:active
+{
+    border-bottom: 2px solid #222222;
+    border-top: 1px solid #222222;
+}

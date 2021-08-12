@@ -1,0 +1,25 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:GridView SkinId="Tahoma11" runat="server" BackColor="#CCCCCC" CellPadding="2" CellSpacing="1" ForeColor="Black">
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" Font-Names="Tahoma" Font-Size="11pt" />
+            <RowStyle BackColor="White" ForeColor="#333333" Font-Names="Tahoma" Font-Size="11pt" />
+            <EditRowStyle BackColor="#999999" Font-Names="Tahoma" Font-Size="11pt"/>
+            <SelectedRowStyle BackColor="White" Font-Bold="True" ForeColor="#333333" Font-Names="Tahoma" Font-Size="11pt"/>
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" Font-Names="Tahoma" Font-Size="11pt"/>
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" Font-Names="Tahoma" Font-Size="11pt"/>
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" Font-Names="Tahoma" Font-Size="11pt"/>
+</asp:GridView>
